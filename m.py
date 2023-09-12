@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Kullanıcıdan isim al
 isim = input("Adınızı girin: ")
 
