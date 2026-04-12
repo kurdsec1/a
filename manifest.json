@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Agarz Pro v2 - Virus Hunter",
+  "version": "2.0.0",
+  "description": "Agarz.com için akıllı virus kasma, makro, otomasyon",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["*://agarz.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://agarz.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["*://agarz.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
